@@ -43,8 +43,8 @@ if (!empty($extraButtonLabel) || !empty($extraButtonOptions)):
 endif;
             echo Html::button($buttonLabel, $htmlOptionsButton) . "\n";
             echo Html::button($removeSingleLabel, $htmlOptionsRemoveSingle) . "\n";
-            echo Html::tag('ul', '', $htmlOptionsResults) . "\n";
         echo Html::endTag('div') . "\n";
+        echo Html::tag('ul', '', $htmlOptionsResults) . "\n";
     echo Html::endTag('div') . "\n";
     echo Html::beginTag('ul', $htmlOptionsSelected) . "\n";
 foreach ($results as $result):
