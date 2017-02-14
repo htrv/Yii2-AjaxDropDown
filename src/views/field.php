@@ -44,6 +44,7 @@ endif;
             echo Html::button($buttonLabel, $htmlOptionsButton) . "\n";
             echo Html::button($removeSingleLabel, $htmlOptionsRemoveSingle) . "\n";
         echo Html::endTag('div') . "\n";
+        //moved from line 46
         echo Html::tag('ul', '', $htmlOptionsResults) . "\n";
     echo Html::endTag('div') . "\n";
     echo Html::beginTag('ul', $htmlOptionsSelected) . "\n";
