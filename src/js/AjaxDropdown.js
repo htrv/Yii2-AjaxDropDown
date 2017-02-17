@@ -72,6 +72,7 @@
         var bt = this.find(buttTogg);
         var btns = this.find('div.ajaxDropDownButtons');
         var prba = '<li class="ajaxDropDownLoading';
+        var getAdditionalPostData = [];
         if (set.locl !== '') prba += ' ' + set.locl;
         prba += '"';
         if (set.lost !== '') prba += st + set.lost + '"';
@@ -113,7 +114,11 @@
                 else search = true;
                 ul.html(header);
                 if (search) {
-                    $.post(set.url, {query:query, page:page}).
+                    var additionalPostData = [];
+                    eval('additionalPostData = ' + set.getAdditionalPostData);
+                    additionalPostData[0]['query'] = query;
+                    additionalPostData[0]['page'] = page;
+                    $.post(set.url, additionalPostData[0]).
                         fail(function(){
                             ul.append(erro);
                             console.log('jQuery post failed');
@@ -187,7 +192,7 @@
             }
             else {
                 var query = tx.val();
-                $.post(set.url, {query:query, page:page}).
+                $.post(set.url, additionalPostData.concat({query:query, page:page}))
                     fail(function(){
                         ul.append(erro);
                         console.log('jQuery post failed');

@@ -467,6 +467,8 @@ class AjaxDropdown extends Widget
      */
     public $translateCategory = 'app';
 
+    public $getAdditionalPostData = '[]';
+
     /**
      * @var array Default Bootstrap classes and labels for the widget.
      */
@@ -908,6 +910,7 @@ class AjaxDropdown extends Widget
             'swcl' => $this->prepareOption('switchClass'),
             'swst' => $this->prepareOption('switchStyle'),
             'url'  => $this->source,
+            'getAdditionalPostData' => $this->getAdditionalPostData,
         ];
     }
 
