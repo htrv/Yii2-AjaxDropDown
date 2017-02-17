@@ -24,7 +24,7 @@ class AjaxDropdownAsset extends AssetBundle
      */
     public function init()
     {
-        $this->js[] = 'AjaxDropdown' . (YII_DEBUG ? '' : '.min') . '.js';
+        $this->js[] = 'AjaxDropdown' . (YII_DEBUG ? '' : '.min') . '.js?v=2';
         parent::init();
     }
 }

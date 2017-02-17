@@ -192,7 +192,11 @@
             }
             else {
                 var query = tx.val();
-                $.post(set.url, additionalPostData.concat({query:query, page:page}))
+                var additionalPostData = [];
+                eval('additionalPostData = ' + set.getAdditionalPostData);
+                additionalPostData[0]['query'] = query;
+                additionalPostData[0]['page'] = page;
+                $.post(set.url, additionalPostData[0]).
                     fail(function(){
                         ul.append(erro);
                         console.log('jQuery post failed');
